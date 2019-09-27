@@ -4,6 +4,9 @@
   background-color: #f4f4f4;
 }
 
+/**
+导航样式设置 
+*/
 .navbg{
   width: 92%;
   background-color: #898989;
@@ -55,13 +58,6 @@
   width: 90%;
   margin: 0 auto;
   text-align: center;
-}
-
-.station view{
-  height: 45px;
-  line-height: 45px;
-  font-size: 20px;
-  width: 33%;
 }
 
 .station view{
@@ -125,4 +121,20 @@
 
 .record text{
   margin-right: 20px;
+}
+
+/*查询下面四个快捷查询按钮*/
+.icon{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.item{
+  width: 25%;
+  text-align: center;
+  margin: 0 auto;
+}
+.menu{
+  font-size: 11px;
+  width: 100px;
 }

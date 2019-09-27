@@ -1,2 +1,79 @@
 <!--pages/trainList/trainList.wxml-->
-<text>pages/trainList/trainList.wxml</text>
+<!--火车票列表界面
+从火车票查询界面会把始发站，终点站，日期这些查询条件带到火车票列表界面-->
+<!--日期的设计-->
+<view class="date">
+  <view>前一天</view>
+  <!--将date变量绑定到wxml文件里，动态显示日期-->
+  <view> {{date}} </view>
+  <view>后一天</view>
+</view>
+<view class="content" style="height:{{winHeight}}px">
+  <block wx:for="{{trainList}}">
+    <!--动态渲染，将trainList,winHeight动态绑定到界面-->
+    <view class="bg">
+      <view class="item">
+        <!--始发站，终点站-->
+        <view class="wrApper left">
+          <!-- <view class="normal">哈尔滨</view>
+        <view class="bule">北京</view> -->
+          <view class="normal">{{item.start_station}}</view>
+          <view class="bule">{{item.start_time}}</view>
+        </view>
+        <!--车次，日期-->
+        <view class="wrApper center">
+          <!-- <view class="normal">DD28</view>
+        <view class="line"></view>
+        <view class="small">7小时54分</view> -->
+          <view class="normal">{{item.train_no}}</view>
+          <view class="line"></view>
+          <view class="small">{{item.run_time}}</view>
+        </view>
+        <!--时间-->
+        <view class="wrApper right">
+          <!-- <view class="normal">06:57</view>
+        <view class="normal">14:51</view> -->
+          <view class="normal">{{item.end_station}}</view>
+          <view class="normal">{{item.end_time}}</view>
+        </view>
+        <!--票价-->
+        <view class="wrApper right">
+          <!-- <view class="blue">￥306.5起</view> -->
+          <view class="blue">￥{{item.price_list[0].price}}起</view>
+          <view class="buy">可抢票</view>
+        </view>
+      </view>
+      <!--分割线-->
+      <view class="hr"></view>
+      <!--剩余座位信息-->
+      <view class="seat">
+        <block wx:for="{{item.price_list}}">
+          <view wx:if="{{index==0}}" class="yes">一等座：100张
+            <text>(抢)</text>
+          </view>
+          <view wx:elif="{{index<3}}">
+            <view class="no">二等座：0张
+              <text>(抢)</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+
+  <!--底部固定页签导航-->
+  <view class="bottomNav">
+    <!--两种样式，一种为标题选中效果select，另一种默认样式效果common
+    定义currentTab动态渲染样式，switchNav菜单来切换事件-->
+    <view id="0" class="{{currentTab==0?'selected':'common'}}" bindtap="switchNav">筛选</view>
+    <view style="color:#fff">|</view>
+
+    <view id="1" class="{{currentTab==1?'selected':'common'}}" bindtap="switchNav">出发时间</view>
+    <view style="color:#fff">|</view>
+
+    <view id="2" class="{{currentTab==2?'selected':'common'}}" bindtap="switchNav">旅行时间</view>
+    <view style="color:#fff">|</view>
+
+    <view id="3" class="{{currentTab==3?'selected':'common'}}" bindtap="switchNav">显示价格</view>
+  </view>
+</view>

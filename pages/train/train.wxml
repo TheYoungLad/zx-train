@@ -1,4 +1,5 @@
 <!--pages/train/train.wxml-->
+<!--海报轮播效果设计-->
 <view class="haibao">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:80px">
     <block wx:for="{{imgUrls}}">
@@ -8,13 +9,17 @@
     </block>
   </swiper>
 </view>
+
+<!--页签切换效果设计-->
 <view class="content">
   <view class="navbg">
+    <!--根据currentTab的值来决定使用选中样式还是正常样式-->
     <view id="0" class="{{currentTab == 0 ?'select':'normal'}}" bindtap="switchNav">火车票
     </view>
     <view id="0" class="{{currentTab == 1 ?'select':'normal'}}" bindtap="switchNav">飞机票
     </view>
   </view>
+  <!--火车票查询区域设计-->
   <view class="formbg">
     <form bindsubmit="formSubmit">
       <view class="station">
@@ -36,7 +41,7 @@
         <view></view>
         <view>
           <text style="color:#5495E6">
-            <input name="week" value="2月2日" />
+            <input name="week" value="周四" />
           </text>>
         </view>
       </view>
@@ -60,6 +65,8 @@
     </form>
   </view>
 
+
+  <!--在火车票查询界面下面有4个查询按钮，由图标和导航名称组成-->
   <view class="icon">
     <view class="item">
       <view>
@@ -67,10 +74,26 @@
       </view>
       <view class="menu">极速抢票</view>
     </view>
+
     <view class="item">
       <view>
-        <image src="../../images/icon/hcp/zxxz.jpg" style="width:40px;height:40x;"></image>
+        <image src="../../images/icon/hcp/zxxz.jpg" style="width:40px;height:40px;"></image>
       </view>
+      <view class="menu">在线选座</view>
+    </view>
+
+    <view class="item">
+      <view>
+        <image src="../../images/icon/hcp/qshh.jpg" style="width:40px;height:40px;"></image>
+      </view>
+      <view class="menu">抢手好货</view>
+    </view>
+
+    <view class="item">
+      <view>
+        <image src="../../images/icon/hcp/czjd.jpg" style="width:40px;height:40px;"></image>
+      </view>
+      <view class="menu">超值酒店</view>
     </view>
   </view>
 </view>

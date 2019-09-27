@@ -1,1 +1,123 @@
 /* pages/trainList/trainList.wxss */
+/*日期样式设置*/
+.date{
+  height: 40px;
+  background-color: #5495e6;
+  display: flex;
+  flex-direction: row;
+}
+.date view{
+  margin: 0 auto;
+  color: #fff;
+  padding-top: 10px;
+}
+.content{
+  height: 600px;
+  background-color: #f4f4f4;
+  padding-top: 10px;
+}
+.bg{
+  width: 95%;
+  height: 90px;
+  border: 1px #999 solid;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.item{
+  /*弹性布局*/
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.wrApper{
+  width: 25%;
+}
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
+.blue{
+  color: #5495e6;
+  font-weight: bold;
+  font-size: 14px;
+}
+.normal{
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+.small{
+  font-size: 13px;
+  color: #666;
+}
+.line{
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+  width: 80%;
+  margin: 3px auto;
+}
+.buy{
+  background-color: red;
+  width: 42px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  float: right;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.hr{
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+.seat{
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.seat text{
+  color: red;
+}
+.yes{
+  margin-right: 10px;
+}
+.no{
+  color: #999;
+  margin-right: 10px;
+}
+
+/*火车票列表底部导航样式*/
+.bottomNav{
+  background-color: #505963;
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  line-height: 45px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.bottomNav view{
+  margin: 0 auto;
+}
+.selected{
+  font-size: 13px;
+  color: #5495e6;
+}
+.common{
+  font-size: 13px;
+  color: #fff;
+}
