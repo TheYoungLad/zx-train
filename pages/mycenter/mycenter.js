@@ -16,15 +16,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
-    //以调用应用实例的方法获取全局时间
-    App.getUserInfo(function(userInfo){
-      console.log(userInfo);
-      //更新数据
-      this.setData({
-        userInfo:userInfo
-      })
-    })
+    // var that=this
+    // //以调用应用实例的方法获取全局时间
+    // App.getUserInfo(function(userInfo){
+    //   console.log(userInfo);
+    //   //更新数据
+    //   this.setData({
+    //     userInfo:userInfo
+    //   })
+    // })
   },
   /**
    * 通过列表导航进入二级界面，实现方式和进入抢票界面一样
